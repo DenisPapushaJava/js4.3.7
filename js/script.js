@@ -74,7 +74,7 @@ const debouncedSearch = debounce((e) => {
         return
     }
     fetch(`https://api.github.com/search/repositories?q="${e.target.value}";per_page=5`).then(r => r.json()).then(result => updateRepositoryList(result.items))
-}, 750)
+}, 1000)
 
 searchInput.addEventListener("input", (e) => {
     debouncedSearch(e)
